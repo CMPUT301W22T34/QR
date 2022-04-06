@@ -33,7 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 /**
- * This java file displays QR codes near the QR code selected by the user.
+ * @description This java file displays QR codes near the QR code selected by the user.
  */
 public class MapDemo2 extends FragmentActivity implements OnMapReadyCallback {
 
@@ -69,6 +69,7 @@ public class MapDemo2 extends FragmentActivity implements OnMapReadyCallback {
     /**
      *
      * @param googleMap
+     * @description to get the map ready
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,

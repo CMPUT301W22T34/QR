@@ -20,7 +20,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
- * This java file is to show the profile of the searched user
+ * @description This java file is to show the profile of the searched user
  */
 public class UserProfile extends AppCompatActivity {
 

@@ -29,7 +29,9 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-
+/**
+ * @description to Directing the activities of QRcode
+ */
 public class QRCodeActivity extends AppCompatActivity implements View.OnClickListener{
 
     String codeDisplay;
@@ -83,7 +85,9 @@ public class QRCodeActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
-
+    /**
+     * @description to display the QR code information
+     */
     private void displayCodeInformation() {
         CollectionReference codesRef = db.collection("QRCodes");
         DocumentReference docUserRef = codesRef.document(codeDisplay);
@@ -115,7 +119,9 @@ public class QRCodeActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
     }
-
+    /**
+     * @description to generate QR code Image
+     */
     private void generateQRImage() {
         int width = 200; // 图像宽度
         int height = 200; // 图像高度
@@ -138,10 +144,18 @@ public class QRCodeActivity extends AppCompatActivity implements View.OnClickLis
         imageView.setImageBitmap(bitmap);
     }
 
+    /**
+     * @description go back to the previous page
+     */
+
     private void displayElse() {
         Intent intent = new Intent(this, CodeScannedbyActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * @description delete QR code
+     */
 
     private void deleteCode() {
         Intent intent = getIntent();
@@ -186,10 +200,18 @@ public class QRCodeActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+    /**
+     * @description update users comment
+     */
+
     private void updateComment() {
         Intent intent = new Intent(this, CodeCommentActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * @description go back to the previous page
+     */
 
     private void goBack() {
         Intent intent = new Intent(this,UserProfile.class);

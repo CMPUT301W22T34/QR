@@ -26,6 +26,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+/**
+ * @description The generated QR code is for players
+ * to scan the QR code for login in
+ *
+ *
+ */
 
 public class GenerateCOde extends AppCompatActivity {
     ImageView SignInCode;
@@ -56,9 +62,11 @@ public class GenerateCOde extends AppCompatActivity {
         });
 
     }
-
-
-    //generate the QR code
+    /**
+     * @description generate the QR code for user to log in
+     *
+     *
+     */
     private Bitmap createBitmap(String signInQrVl) {
         BitMatrix result = null;
         try {

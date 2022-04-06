@@ -25,6 +25,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 //in progress
+
+/**
+ * @description Enables users to comment on the code
+ *
+ *
+ */
 public class CodeCommentActivity extends AppCompatActivity implements View.OnClickListener {
     String codeDisplay;
     String userName;
@@ -73,6 +79,11 @@ public class CodeCommentActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
+    /**
+     * @description show information to the user
+     *
+     *
+     */
 
     private void displayInformation() {
         HashScore hashScore = new HashScore();
@@ -95,6 +106,12 @@ public class CodeCommentActivity extends AppCompatActivity implements View.OnCli
             }
         });
     }
+
+    /**
+     * @description Perform the action of adding a comment by the user
+     *
+     *
+     */
 
     private void doAddComment() {
         EditText editText = findViewById(R.id.txtCodeComment);
@@ -128,6 +145,11 @@ public class CodeCommentActivity extends AppCompatActivity implements View.OnCli
             }
         });
     }
+
+    /**
+     * @description Return to the previous page
+     * @param searchedUserName
+     */
 
     private void goBack(String searchedUserName) {
 //        if (appData.getComefromme()) {

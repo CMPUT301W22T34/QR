@@ -38,7 +38,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This java file is to show the code list of the user and the contact information of user
+ * @description This java file is to show the code list of the user and the contact information of user
  */
 public class UserCode extends AppCompatActivity {
 
@@ -204,6 +204,11 @@ public class UserCode extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @description to show the highest score to user
+     * @param message
+     */
     public void highestDialog(String message){
         AlertDialog dlg =new AlertDialog.Builder(UserCode.this)
                 .setTitle("Highest Score QR Code")
@@ -217,6 +222,11 @@ public class UserCode extends AppCompatActivity {
                 .create();
         dlg.show();
     }
+
+    /**
+     * @description to show the lowest score to user
+     * @param message
+     */
     public void lowestDialog(String message){
         AlertDialog dlg =new AlertDialog.Builder(UserCode.this)
                 .setTitle("Lowest Score QR Code")
@@ -233,6 +243,11 @@ public class UserCode extends AppCompatActivity {
 
     }
 
+
+    /**
+     * @description to show the delete process to user
+     * @param chosen
+     */
     public void showDelete(int chosen){
         AlertDialog dlg =new AlertDialog.Builder(UserCode.this)
                 .setTitle("QR Code does not exist")
@@ -284,6 +299,10 @@ public class UserCode extends AppCompatActivity {
 
     }
 
+
+    /**
+     * @description to show the message to user
+     */
     public void showMessage(){
         AlertDialog dlg =new AlertDialog.Builder(UserCode.this)
                 .setTitle("Only for status")

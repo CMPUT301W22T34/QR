@@ -30,6 +30,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @description to control the share activity
+ */
+
 public class ShareActivity extends AppCompatActivity {
     private ImageView shotview ;//shotview定义在这里
     //【warning】如果这里写成：private ImageView shotview = findViewById(R.id.imageView);会报错

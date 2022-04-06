@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This java file is to ask the users if they want to share the geolocation
+ * @description This java file is to ask the users if they want to share the geolocation
  */
 public class SharedGeo extends AppCompatActivity {
     FirebaseFirestore db;
@@ -106,7 +106,10 @@ public class SharedGeo extends AppCompatActivity {
 
 
     }
-    // get the current location
+
+    /**
+     * @description get the current location
+     */
     private void getLastLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -150,6 +153,10 @@ public class SharedGeo extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @description ask the user for Location Permission
+     */
     private void askLocationPermission(){
         if(ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED){
             if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
@@ -160,6 +167,9 @@ public class SharedGeo extends AppCompatActivity {
         }
     }
 
+    /**
+     * @description ask the user for Location Permission second time
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
