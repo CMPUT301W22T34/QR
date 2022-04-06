@@ -235,7 +235,7 @@ public class UserCode extends AppCompatActivity {
 
     public void showDelete(int chosen){
         AlertDialog dlg =new AlertDialog.Builder(UserCode.this)
-                .setTitle("QR Code is not exist1")
+                .setTitle("QR Code does not exist")
                 .setMessage("This code has already been removed from database by owner,but you can keep the score")
                 .setPositiveButton("Now I know that", new DialogInterface.OnClickListener() {
                     @Override

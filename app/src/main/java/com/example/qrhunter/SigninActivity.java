@@ -40,8 +40,8 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
 
         Button btnTmp;
         TextView txtTmp;
-        btnTmp = (Button) findViewById(R.id.btnSignin);
-        btnTmp.setOnClickListener(this);
+        //btnTmp = (Button) findViewById(R.id.btnSignin);
+        //btnTmp.setOnClickListener(this);
         txtTmp = (TextView) findViewById(R.id.txtSignup);
         txtTmp.setOnClickListener(this);
         txtTmp = (TextView) findViewById(R.id.txtSigninQRCode);
@@ -53,19 +53,6 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnSignin:
-                final EditText edtTmp;
-
-                edtTmp = (EditText) findViewById(R.id.txtAccount);
-                String account = edtTmp.getText().toString();
-                if (account.equals("")) {
-                    showMessage("Account can't be empty!");
-                    edtTmp.requestFocus();
-                    return;
-                } else {
-                    signin2(account);
-                    break;
-                }
             case R.id.txtSignup:
                 Intent intent = new Intent(this, SignupActivity.class);
                 startActivity(intent);
