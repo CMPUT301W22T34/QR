@@ -20,53 +20,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="100dp"
         android:text="Sign In"
         android:textSize="20sp"
         android:textColor="@color/black" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="60dp"
-        android:text="Account"
-        android:textColor="@color/black" />
 
-    <EditText
-        android:id="@+id/txtAccount"
-        android:layout_width="260dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Account Name" />
 
-    <CheckBox
-        android:id="@+id/chkRemember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Remember me" />
 
-    <Button
-        android:id="@+id/btnSignin"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="Sign In" />
 
     <TextView
         android:id="@+id/txtSigninQRCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="100dp"
         android:clickable="true"
         android:text="Sign in by QR code"
         android:textSize="16dp"
         android:textColor="@color/purple_200"/>
+
+    <CheckBox
+        android:id="@+id/chkRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:text="Remember me" />
 
 
     <LinearLayout
