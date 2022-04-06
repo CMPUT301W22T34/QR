@@ -4,6 +4,9 @@ import android.os.Bundle;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
 
+/**
+ * @description to control the scan activity
+ */
 public class ScanActivity extends CaptureActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {

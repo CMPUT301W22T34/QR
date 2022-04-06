@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * This function is to show the code list with the highest and the lowest scoring code of the searched user
+ * @description This function is to show the code list with the highest and the lowest scoring code of the searched user
  */
 public class SearchUserCode extends AppCompatActivity {
 
@@ -177,7 +177,10 @@ public class SearchUserCode extends AppCompatActivity {
 
     }
 
-
+    /**
+     * @description to show the highest score to user
+     * @param message
+     */
     public void highestDialog(String message){
         AlertDialog dlg =new AlertDialog.Builder(SearchUserCode.this)
                 .setTitle("Highest Score QR Code")
@@ -192,6 +195,10 @@ public class SearchUserCode extends AppCompatActivity {
         dlg.show();
     }
 
+    /**
+     * @description to show the lowest score to user
+     * @param message
+     */
     public void lowestDialog(String message){
         AlertDialog dlg =new AlertDialog.Builder(SearchUserCode.this)
                 .setTitle("Lowest Score QR Code")

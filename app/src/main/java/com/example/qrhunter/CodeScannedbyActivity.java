@@ -21,6 +21,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 import java.util.HashMap;
 //in progress
+/**
+ * @description Shows which user scanned each QR code.
+ *
+ *
+ */
 public class CodeScannedbyActivity extends AppCompatActivity implements View.OnClickListener{
 
     String codeDisplay;
@@ -70,6 +75,11 @@ public class CodeScannedbyActivity extends AppCompatActivity implements View.OnC
             }
         });
     }
+    /**
+     * @description Get the user's score
+     *
+     *
+     */
 
     private int getUserScore(String userName) {
         CollectionReference codesRef = db.collection("Users");

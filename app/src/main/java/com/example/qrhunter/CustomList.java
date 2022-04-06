@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+/**
+ * @description to show all player
+ *
+ *
+ */
 
 public class CustomList extends ArrayAdapter<User> {
 

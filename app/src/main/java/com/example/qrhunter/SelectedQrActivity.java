@@ -39,7 +39,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * This file is to show the details about the selected code
+ * @description This file is to show the details about the selected code
  */
 public class SelectedQrActivity extends AppCompatActivity {
     String codeDisplay;
@@ -191,6 +191,10 @@ public class SelectedQrActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @description to show the detail to the user
+     */
     private void showdetail(){
         android.app.AlertDialog dlg =new android.app.AlertDialog.Builder(SelectedQrActivity.this)
                 .setTitle("Can not click")
@@ -206,7 +210,7 @@ public class SelectedQrActivity extends AppCompatActivity {
     }
 
     /**
-     * delete the code
+     * @description delete the code
      */
     private void deleteCode() {
         Intent intent = getIntent();
@@ -253,6 +257,10 @@ public class SelectedQrActivity extends AppCompatActivity {
         });
 
     }
+
+    /**
+     * @description to show the message
+     */
 
     public void ShowMessage(){
         android.app.AlertDialog dlg =new android.app.AlertDialog.Builder(SelectedQrActivity.this)

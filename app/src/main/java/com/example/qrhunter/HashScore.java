@@ -6,7 +6,12 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
-//decode and get score
+/**
+ * @description decode and get score
+ *
+ *
+ */
+
 public class HashScore {
 
     public String hash256(String str) {
@@ -24,6 +29,11 @@ public class HashScore {
         }
         return encodestr;
     }
+    /**
+     * @description Handling byte bits
+     *
+     *
+     */
 
     private String byte2hex(byte[] bytes) {
         StringBuffer stringBuffer = new StringBuffer();
@@ -37,6 +47,11 @@ public class HashScore {
         }
         return stringBuffer.toString();
     }
+    /**
+     * @description
+     *
+     *
+     */
 
     public ArrayList<String> counter(String hashcode) {
         ArrayList<String> result = new ArrayList<String>();
@@ -60,6 +75,12 @@ public class HashScore {
 
         return result;
     }
+
+    /**
+     * @description calcualte score
+     *
+     *
+     */
 
     public int score(ArrayList<String> chain) {
         char c = 0;

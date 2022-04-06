@@ -41,6 +41,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @description to control the activity of score
+ */
 public class ScoreActivity extends AppCompatActivity implements View.OnClickListener {
     String qrCode;
     String imagePath;
@@ -137,6 +140,10 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    /**
+     * @description to show the list of who also scan this qr code
+     */
+
     private void whoscanned() {
         HashScore hashScore = new HashScore();
         Intent intent = new Intent(this,WhoAlsoScan.class);
@@ -144,12 +151,17 @@ public class ScoreActivity extends AppCompatActivity implements View.OnClickList
         startActivity(intent);
     }
 
+    /**
+     * @description to go back to previous activity
+     */
     private void back() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    // one code can scan so many times and keep adding score
+    /**
+     * @description one code can scan so many times and keep adding score
+     */
     private void add() {
         //saveGeo();
         // Read user records modify parameters and write back

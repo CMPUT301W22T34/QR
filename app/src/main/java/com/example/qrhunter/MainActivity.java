@@ -30,6 +30,11 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+/**
+ * @description This file is responsible for the overall operation
+ * of the app, and the jumping of pages
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnTmp;
@@ -71,7 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         db = FirebaseFirestore.getInstance();
         //1234 Log.e("user",user.getUserPasscode() );
-
+        /**
+         * @description to check user profile
+         */
         Button profile = findViewById(R.id.btnProfile);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
         });
-
+        /**
+         * @description to check user's rank
+         */
         Button rank= findViewById(R.id.btnRank);
         rank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(rankActivity);
             }
         });
-
+        /**
+         * @description to check the map
+         */
         Button map= findViewById(R.id.btnMap);
         map.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(rankActivity);
             }
         });
+        /**
+         * @description to search
+         */
 
         final Button searchCode = findViewById(R.id.searchbtn);
         searchCode.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +126,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
 
-
+        /**
+         * @description to check user profile
+         */
         Button code = findViewById(R.id.btnCode);
         code.setOnClickListener((new View.OnClickListener() {
             @Override

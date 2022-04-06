@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 /**
- * This java file is to show the detail of the code from the code list of the searched user
+ * @description This java file is to show the detail of the code from the code list of the searched user
  */
 public class SelectedSearchUserQr extends AppCompatActivity {
     String codeDisplay;

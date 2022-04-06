@@ -46,7 +46,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 /**
- *This file is mainly responsible for searching on the map and moving the camera to the searched location.
+ *@description This file is mainly responsible for searching on the map and moving the camera to the searched location.
  */
 public class MapDemo extends FragmentActivity implements OnMapReadyCallback {
 
@@ -75,7 +75,7 @@ public class MapDemo extends FragmentActivity implements OnMapReadyCallback {
         });
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         /**
-         * Obtain the SupportMapFragment and get notified when the map is ready to be used.
+         * @description Obtain the SupportMapFragment and get notified when the map is ready to be used.
          *
          * At the same time, search for nearby QR codes and display them on the map.
          * */
@@ -116,9 +116,10 @@ public class MapDemo extends FragmentActivity implements OnMapReadyCallback {
 
 
     /**
+     *
      * @link #onMapReady(GoogleMap)
      * @param googleMap
-     * This function is mainly responsible for the preparation of the map before it is displayed.
+     * @description This function is mainly responsible for the preparation of the map before it is displayed.
      *  This callback is triggered when the map is ready to be used.
      *  This is where we can add markers from the firestore, add listeners or move the camera.
      *  We add multiple markers from the firestore.The markers represent QR codes.
@@ -192,6 +193,7 @@ public class MapDemo extends FragmentActivity implements OnMapReadyCallback {
     }
 
     /**
+     * @description get player current location
      * @link enableUserLocation
      * @param
      */
@@ -210,7 +212,7 @@ public class MapDemo extends FragmentActivity implements OnMapReadyCallback {
     }
 
     /**
-     * Get the latitude and longitude of the current position to calculate the distance
+     * @description Get the latitude and longitude of the current position to calculate the distance
      *
      * @param
      */
