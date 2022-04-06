@@ -31,6 +31,9 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 
+/**
+ * this file for signing up
+ */
 //if you dont have an account, then you can signup one
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -46,6 +49,11 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         TextView txtTmp = (TextView) findViewById(R.id.txtSignin);
         txtTmp.setOnClickListener(this);
     }
+
+    /**
+     * player action
+     * @param view
+     */
 
     @Override
     public void onClick(View view) {
@@ -69,6 +77,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
+    /**
+     * save account in the database
+     * @param account
+     * @param password
+     */
 
     private void saveAccount(String account, String password) {
         User Account = new User(account, password);
@@ -107,6 +121,12 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+
+    /**
+     * show the player unique code
+     * @param signInQrVl
+     * @return
+     */
     private Bitmap createBitmap(String signInQrVl) {
         BitMatrix result = null;
         try {
@@ -138,6 +158,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         imm.showSoftInput(et, InputMethodManager.SHOW_IMPLICIT);
     }
 
+    /**
+     * do not show input
+     */
     private void hideInput() {
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         View v = getWindow().peekDecorView();
@@ -146,6 +169,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * show message
+     * @param message
+     */
     private void showMessage(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);

@@ -21,7 +21,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
+/**
+ * this interface shows user's rank ordered by user's unique code
+ */
 public class RankUnique extends AppCompatActivity {
     private ListView userList;
     private ArrayAdapter<User> userAdapter;

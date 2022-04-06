@@ -22,6 +22,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+/**
+ * this interface shows user's rank ordered by user's highest code
+ */
 //see game-wide high scores of all players
 public class RankHighest extends AppCompatActivity {
     private ListView userList;

@@ -27,6 +27,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
+/**
+ * this file shows sign in
+ */
 //signin, and remember me
 public class SigninActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -50,6 +53,10 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
         // read from local, auto sign in
     }
 
+    /**
+     * palyer action
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -65,6 +72,10 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
         }
 
     }
+
+    /**
+     * scan code
+     */
 
     private void scanCode(){
         IntentIntegrator integrator = new IntentIntegrator(this);
@@ -97,6 +108,11 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
             super.onActivityResult(requestCode,resultCode,data);
         }
     }
+
+    /**
+     * sgin in and store in the database
+     * @param account
+     */
 
     private void signin(String account) {
         SharedData appData = (SharedData) getApplication();
@@ -186,6 +202,11 @@ public class SigninActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
     }
+
+    /**
+     * show message
+     * @param message
+     */
     private void showMessage(String message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);

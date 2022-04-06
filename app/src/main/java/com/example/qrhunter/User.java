@@ -20,7 +20,11 @@ public class User  {
     private String userEmail;
     ArrayList<String> scanned;
 
-
+    /**
+     * construct user
+     * @param name
+     * @param password
+     */
 
     public User(String name, String password) {
         this.userName = name;
@@ -34,12 +38,25 @@ public class User  {
         //this.comment = "";
         // this.scanned = new ArrayList<String>();
     }
+
+    /**
+     * construct user
+     * @param userName
+     * @param userID
+     * @param codes
+     */
     public User(String userName, String userID, ArrayList<QRCode> codes) {
         this.userID = userID;
         this.userName = userName;
         this.codes = codes;
     }
 
+    /**
+     * construct user
+     * @param userID
+     * @param userName
+     * @param userPasscode
+     */
     public User(String userID, String userName, String userPasscode) {
         this.userID = userID;
         this.userName = userName;
@@ -48,6 +65,11 @@ public class User  {
 
 
     }
+    /**
+     * construct user
+     * @param userName
+     * @param amount
+     */
 
     public User(String userName,int amount) {
         // this.userID = userID;
@@ -59,6 +81,9 @@ public class User  {
         this.sum = amount;
 
     }
+    /**
+     * construct user
+     */
 
     public User() {
     }
@@ -66,7 +91,10 @@ public class User  {
     public String getUserID() {
         return userID;
     }
-
+    /**
+     * get name
+     * @return
+     */
     public String getUserName() {
         return userName;
     }
@@ -74,7 +102,10 @@ public class User  {
     public String getUserPasscode() {
         return userPasscode;
     }
-
+    /**
+     * get code
+     * @return
+     */
     public ArrayList<QRCode> getCodes() {
         return codes;
     }
@@ -83,7 +114,10 @@ public class User  {
         codes.add(code);
     }
 
-
+    /**
+     * get sum
+     * @return
+     */
     public int getSum(){
         //sum=0;
         //for(int i=0;i<codes.size();i++){
@@ -91,12 +125,18 @@ public class User  {
         // }
         return sum;
     }
-
+    /**
+     * get total
+     * @return
+     */
     public int getTotal(){
         //total = codes.size();
         return total;
     }
-
+    /**
+     * get highest
+     * @return
+     */
     public int getHighest(){
         // highest=0;
         // for(int i =0; i< codes.size();i++){
@@ -106,6 +146,10 @@ public class User  {
         //  }
         return highest;
     }
+    /**
+     * get unique
+     * @return
+     */
 
     public int getUnique(){
         //unique =0;

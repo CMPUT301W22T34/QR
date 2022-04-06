@@ -22,7 +22,10 @@ public class RankOwnerProfileList {
     }
 
 
-
+    /**
+     * sort the userlist from highest to lowest
+     * @return
+     */
     public List<User> sort() {
         ArrayList<User> list1 = new ArrayList<>();
         Collections.sort(list, new Comparator<User>() {
@@ -35,7 +38,11 @@ public class RankOwnerProfileList {
         list1 = list;
         return list1;
     }
-
+    /**
+     * find the user in the list
+     * @param userId
+     * @return
+     */
 
     public int find(String userId) {
         int position = 0;
@@ -47,7 +54,11 @@ public class RankOwnerProfileList {
         }
         return position;
     }
-
+    /**
+     * this list has the user
+     * @param user
+     * @return
+     */
 
     public boolean hasUser(User user){
         if (list.contains(user)) {
@@ -71,6 +82,10 @@ public class RankOwnerProfileList {
             throw new IllegalArgumentException();
         }
     }
+    /**
+     * find the user who have the highest score
+     * @return
+     */
 
     public String  findHigh(){
         Collections.sort(list, new Comparator<User>() {
@@ -82,6 +97,10 @@ public class RankOwnerProfileList {
         });
         return list.get(0).getUserName();
     }
+    /**
+     * find the user who has the lowest score
+     * @return
+     */
 
     public String findLow(){
         Collections.sort(list, new Comparator<User>() {

@@ -16,7 +16,7 @@ import org.junit.Test;
 
 public class ManageActivityTest {
     /**
-     * Test class for RankActivity. All the UI tests are written here. Robotium test framework is
+     * Test class for ManageActivity. All the UI tests are written here. Robotium test framework is
      used
      */
     private Solo solo;
@@ -43,48 +43,43 @@ public class ManageActivityTest {
     }
 
     /**
-     * Check whether activity correctly switched
-     * 包括back 的button
+     * test manage code
      */
-
     @Test
-    public void checkSwitch(){
+    public void checkCode() {
         solo.assertCurrentActivity("Wrong Activity", ManageActivity.class);
-        solo.clickOnButton("Manage User"); //Click ADD CITY Button
-        solo.assertCurrentActivity("Wrong Activity", DeleteUserActivity.class);
+        solo.clickOnButton("Manage Code");
+        solo.assertCurrentActivity("Wrong Activity", DeleteCodesActivity.class);
+        assertTrue(solo.searchButton("Delete"));
+        solo.clickLongInList(0);
+        solo.assertCurrentActivity("Wrong Activity", SelectedQrActivity.class);
+        assertTrue(solo.searchButton("Location"));
         solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", ManageActivity.class);
-
-        solo.clickOnButton("Manage Code"); //Click ADD CITY Button
         solo.assertCurrentActivity("Wrong Activity", DeleteCodesActivity.class);
         solo.clickOnButton("Back");
         solo.assertCurrentActivity("Wrong Activity", ManageActivity.class);
-        solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
     }
 
+
     /**
-     * test list UI
+     * test manage user
      */
 
+
     @Test
-    public void checkList(){
+    public void checkUser() {
         solo.assertCurrentActivity("Wrong Activity", ManageActivity.class);
         solo.clickOnButton("Manage User");
         solo.assertCurrentActivity("Wrong Activity", DeleteUserActivity.class);
         assertTrue(solo.searchText("1234"));
-        solo.clickOnButton("Back");
-
-        solo.clickOnButton("Manage Code");
-        solo.assertCurrentActivity("Wrong Activity", DeleteCodesActivity.class);
-        assertTrue(solo.searchText("1234"));
-        solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", ManageActivity.class);
-
-
-
-
+        solo.clickLongInList(0);
+        solo.assertCurrentActivity("Wrong Activity", UserCode.class);
+        assertTrue(solo.searchButton("Show highest"));
     }
+
+
+
+
 
     /**
      * Closes the activity after each test

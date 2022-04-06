@@ -22,7 +22,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
+/**
+ * This interface is show the user rank ordered by Amount
+ */
 public class RankAmount extends AppCompatActivity {
     private ListView userList;
     private ArrayAdapter<User> userAdapter;
@@ -93,6 +95,12 @@ public class RankAmount extends AppCompatActivity {
 
 
     }
+    /**
+     * this method will sort list from highest to lowest
+     * @param userDataList
+     * @return
+     */
+
 
     public ArrayList<User> sortTotal(ArrayList<User> userDataList){
         ArrayList<User> list = new ArrayList<>();
@@ -106,6 +114,13 @@ public class RankAmount extends AppCompatActivity {
         list = userDataList;
         return list;
     }
+
+    /**
+     * this method shows user rank
+     * @param userDataList
+     * @param userId
+     * @return
+     */
 
     public String findTotal(ArrayList<User> userDataList, String userId){
         String str ="";

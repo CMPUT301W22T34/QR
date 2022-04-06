@@ -1,9 +1,6 @@
 package com.example.qrhunter;
 
-import static org.junit.Assert.assertTrue;
-
 import android.app.Activity;
-import android.widget.EditText;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
@@ -15,7 +12,7 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class SignInOutUpTest {
+public class ScanTest {
     /**
      * Test class for RankActivity. All the UI tests are written here. Robotium test framework is
      used
@@ -44,32 +41,41 @@ public class SignInOutUpTest {
     }
 
     /**
-     * Check whether activity correctly switched
-     * 包括back 的button
+     * test search by code's scan
+     */
+    @Test
+    public void testSearchCode() {
+        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
+        solo.clickOnButton("Search By code");
+        solo.assertCurrentActivity("Wrong Activity", ScanActivity.class);
+    }
+
+    /**
+     * test play's scan
+     */
+    @Test
+    public void testPlay(){
+        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
+        solo.clickOnButton("Play");
+        solo.assertCurrentActivity("Wrong Activity", ScanActivity.class);
+    }
+
+
+    /**
+     * test sign in 's scan
      */
 
     @Test
-    public void checkSignUp(){
-        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
-        solo.clickOnText("Sign Up");
-        solo.assertCurrentActivity("Wrong Activity", SignupActivity.class);
-        solo.enterText((EditText) solo.getView(R.id.txtUserSignup),  "new");
-        //solo.enterText((EditText) solo.getView(R.id.txtPasswordSignup), "new01");
-        solo.clickOnButton("Sign Up");
-        solo.assertCurrentActivity("Wrong Activity", SigninActivity.class);
-    }
-
-    @Test
-    public void checkSignInAndOut(){
-        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
-        solo.enterText((EditText) solo.getView(R.id.txtAccount), "1234");
-        //solo.enterText((EditText) solo.getView(R.id.txtPassword), "1234");
-        solo.clickOnButton("Sign In"); //Click ADD CITY Button
+    public void testSignin(){
         solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
         solo.clickOnButton("Sign Out");
         solo.clickOnText("Confirm");
-        solo.assertCurrentActivity("Wrong Activity", SigninActivity.class);
+        solo.assertCurrentActivity("Wrong Activity",SigninActivity.class);
+        solo.clickOnText("Sign in by QR code");
+        solo.assertCurrentActivity("Wrong Activity", ScanActivity.class);
     }
+
+
 
 
 
@@ -85,4 +91,5 @@ public class SignInOutUpTest {
     public void tearDown() throws Exception{
         solo.finishOpenedActivities();
     }
+
 }

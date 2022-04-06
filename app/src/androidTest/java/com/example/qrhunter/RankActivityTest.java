@@ -45,67 +45,62 @@ public class RankActivityTest {
 
     /**
      * Check whether activity correctly switched
-     * 包括back 的button
+     *
      */
 
     @Test
-    public void checkSwitch(){
+    public void checkAmount() {
         solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
         solo.clickOnButton("Rank by Amount of Codes"); //Click ADD CITY Button
         solo.assertCurrentActivity("Wrong Activity", RankAmount.class);
+        assertTrue(solo.searchText("1234"));
         solo.clickOnButton("Back");
         solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
+    }
 
+    /**
+     * test sum rank
+     */
+
+    @Test
+    public void checkSum() {
         solo.clickOnButton("Rank by Sum Scores"); //Click ADD CITY Button
         solo.assertCurrentActivity("Wrong Activity", RankSum.class);
+        assertTrue(solo.searchText("1234"));
         solo.clickOnButton("Back");
         solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
+    }
 
+    /**
+     * test highest
+     */
+
+    @Test
+    public void checkHighest() {
         solo.clickOnButton("Rank by Highest Score"); //Click ADD CITY Button
+        assertTrue(solo.searchText("1234"));
         solo.assertCurrentActivity("Wrong Activity", RankHighest.class);
         solo.clickOnButton("Back");
         solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
-
-        solo.clickOnButton("Rank by Unique code"); //Click ADD CITY Button
-        solo.assertCurrentActivity("Wrong Activity", RankUnique.class);
-        solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
-        solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
     }
 
     /**
-     * test list UI
+     * test unique
      */
 
     @Test
-    public void checkList(){
-        solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
-        solo.clickOnButton("Rank by Amount of Codes"); //Click ADD CITY Button
-        solo.assertCurrentActivity("Wrong Activity", RankAmount.class);
-        assertTrue(solo.searchText("1234"));
-        solo.clickOnButton("Back");
-
-        solo.clickOnButton("Rank by Sum Scores"); //Click ADD CITY Button
-        solo.assertCurrentActivity("Wrong Activity", RankSum.class);
-        assertTrue(solo.searchText("1234"));
-        solo.clickOnButton("Back");
-
-        solo.clickOnButton("Rank by Highest Score"); //Click ADD CITY Button
-        assertTrue(solo.searchText("1234"));
-        solo.assertCurrentActivity("Wrong Activity", RankHighest.class);
-        solo.clickOnButton("Back");
-
+    public void checkUnique() {
         solo.clickOnButton("Rank by Unique code"); //Click ADD CITY Button
         solo.assertCurrentActivity("Wrong Activity", RankUnique.class);
         assertTrue(solo.searchText("1234"));
         solo.clickOnButton("Back");
-        solo.clickOnButton("Back");
-        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
-
+        solo.assertCurrentActivity("Wrong Activity", RankActivity.class);
 
     }
+
+
+
 
     /**
      * Closes the activity after each test

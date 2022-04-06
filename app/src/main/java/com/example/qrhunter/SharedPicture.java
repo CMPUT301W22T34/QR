@@ -55,6 +55,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * this file shows that player shared the picture
+ * and take a photo
+ * and resize it
+ */
 public class SharedPicture extends AppCompatActivity {
     FirebaseFirestore db;
     HashScore hashScore;
@@ -155,7 +160,9 @@ public class SharedPicture extends AppCompatActivity {
         //default use card photo
 //        cardPhoto();
     }
-
+    /**
+     * do not share the picture
+     */
     private void donotShare() {
         CollectionReference codesRef = db.collection("QRCodes");
         DocumentReference docCodeRef = codesRef.document(hashScore.hash256(qrCode));
@@ -173,7 +180,9 @@ public class SharedPicture extends AppCompatActivity {
             }
         });
     }
-
+    /**
+     * share the picture
+     */
     private void share() {
         if(filePath != null) {
             Date date = new Date(System.currentTimeMillis());
@@ -232,13 +241,18 @@ public class SharedPicture extends AppCompatActivity {
             Toast.makeText(SharedPicture.this, "Select an image", Toast.LENGTH_SHORT).show();
         }
     }
-
+    /**
+     * save the image path
+     */
     private void cardPhoto() {
         ImageView imageView = findViewById(R.id.imgQrcode);
         File file = new File(imagePath);
         imageView.setImageURI(Uri.fromFile(file));
         filePath = imagePath;
     }
+    /**
+     * check the picture size and resize
+     */
 
     public void notBigPhoto(){
         File file = new File(filePath);
@@ -260,7 +274,11 @@ public class SharedPicture extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * get the file
+     * @param file
+     * @return static
+     */
     public static double getFileOrFilesSize(File file) {
 
         long blockSize = 0;
@@ -277,6 +295,11 @@ public class SharedPicture extends AppCompatActivity {
         return FormetFileSize(blockSize);
     }
 
+    /**
+     * change the  size format
+     * @param fileS
+     * @return
+     */
     private static double FormetFileSize(long fileS) {
         DecimalFormat df = new DecimalFormat("#.00");
         double fileSizeLong = 0;
@@ -284,6 +307,12 @@ public class SharedPicture extends AppCompatActivity {
         return fileSizeLong;
 
     }
+    /**
+     * get file size
+     * @param f
+     * @return
+     * @throws Exception
+     */
 
     private static long getFileSizes(File f) throws Exception {
         long size = 0;
@@ -297,7 +326,12 @@ public class SharedPicture extends AppCompatActivity {
         }
         return size;
     }
-
+    /**
+     * get file size
+     * @param file
+     * @return
+     * @throws Exception
+     */
     private static long getFileSize(File file) throws Exception {
         long size = 0;
         if (file.exists()) {
@@ -312,7 +346,9 @@ public class SharedPicture extends AppCompatActivity {
     }
 
 
-
+    /**
+     * take photo
+     */
     public void takePhoto() {
 //        File outputImage = new File(Environment.getExternalStorageDirectory()+"/outputImage.jpg");
         filePath = getExternalCacheDir() + "/outputImage.jpg";
@@ -381,7 +417,13 @@ public class SharedPicture extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * resize the photo
+     * @param path
+     * @param reqWidth
+     * @param reqHeight
+     * @return
+     */
     private Bitmap resizeImage(String path, int reqWidth, int reqHeight) {
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();

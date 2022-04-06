@@ -1,7 +1,5 @@
 package com.example.qrhunter;
 
-import static org.junit.Assert.assertTrue;
-
 import android.app.Activity;
 
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -14,15 +12,15 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-public class ProfileTest {
+public class MapDemoTest {
     /**
-     * Test class for RankActivity. All the UI tests are written here. Robotium test framework is
+     * Test class for MapDemo. All the UI tests are written here. Robotium test framework is
      used
      */
     private Solo solo;
     @Rule
-    public ActivityTestRule<UserCode> rule =
-            new ActivityTestRule<>(UserCode.class, true, true);
+    public ActivityTestRule<MainActivity> rule =
+            new ActivityTestRule<>(MainActivity.class, true, true);
 
     /**
      * Runs before all tests and creates solo instance.
@@ -44,19 +42,16 @@ public class ProfileTest {
 
     /**
      * Check whether activity correctly switched
-     * 包括back 的button
+     * Include back button
      */
 
     @Test
-    public void checkSwitchAndContent(){
-        solo.assertCurrentActivity("Wrong Activity",UserCode.class);
-        assertTrue(solo.searchText("Total Score"));
-        assertTrue(solo.searchText("Number"));
-        solo.clickInList(0);
-        solo.assertCurrentActivity("Wrong Activity",SelectedQrActivity.class);
-        assertTrue(solo.searchButton("Location"));
-        solo.clickOnButton("back");
-        solo.assertCurrentActivity("Wrong Activity", UserCode.class);
+    public void checkSwitch(){
+        solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
+        solo.clickOnButton("Map");
+        solo.assertCurrentActivity("Wrong Activity",MapDemo.class);
+        //solo.clickOnButton("Back");
+        //solo.assertCurrentActivity("Wrong Activity", MainActivity.class);
 
     }
 
